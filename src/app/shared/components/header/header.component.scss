@@ -1,0 +1,8 @@
+nav > a {
+    padding: 5px;
+    text-decoration: none;
+}
+//cuando este en una ruta 
+nav > a.active{
+    background-color: aqua;
+}
