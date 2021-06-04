@@ -14,6 +14,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { LayoutComponent } from './layout/layout.component'; //importo el componente creado de product
 //importo shared
 import {SharedModule} from './shared/shared.module';
+//importo el core 
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,11 @@ import {SharedModule} from './shared/shared.module';
     LayoutComponent, //en el array de declaration agregamos el componente
   ],
   imports: [
-    SharedModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    SharedModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

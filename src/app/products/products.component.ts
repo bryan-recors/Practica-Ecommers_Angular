@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //importo un injector de dependencias
 import {ActivatedRoute} from '@angular/router';
 //importo la clase para el servicio
-import {ProductsService} from './../products.service';
+import {ProductsService} from '../core/services/products/products.service';
 //importo el producto model 
 import {Product} from './../product.model';
 @Component({
