@@ -6,6 +6,8 @@ import {DemoComponent} from './demo/demo.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {LayoutComponent} from './layout/layout.component';
+//IMPORTO EL GUARDIAN
+import {AdminGuard} from './admin.guard';
 const routes: Routes = [
   {
     //este componente generara el layout
@@ -34,6 +36,7 @@ const routes: Routes = [
       },
       {
         path: 'contact',  
+        canActivate:[AdminGuard],
         component: ContactComponent
       },
     ] 

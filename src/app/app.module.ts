@@ -16,6 +16,8 @@ import { LayoutComponent } from './layout/layout.component'; //importo el compon
 import {SharedModule} from './shared/shared.module';
 //importo el core 
 import {CoreModule} from './core/core.module';
+//de material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {CoreModule} from './core/core.module';
     AppRoutingModule,
     FormsModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
