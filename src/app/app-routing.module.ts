@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';  
-import {ProductsComponent} from './products/products.component';
 import {DemoComponent} from './demo/demo.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {LayoutComponent} from './layout/layout.component';
 //IMPORTO EL GUARDIAN
 import {AdminGuard} from './admin.guard';
@@ -27,12 +25,9 @@ const routes: Routes = [
       },
       {
         path: 'products',  
-        component: ProductsComponent
+        loadChildren:() => import('./product/product.module').then(m => m.ProductModule)
       },
-      {
-        path: 'products/:id',
-        component: ProductDetailComponent
-      },
+
       {
         path: 'contact',  
         canActivate:[AdminGuard],

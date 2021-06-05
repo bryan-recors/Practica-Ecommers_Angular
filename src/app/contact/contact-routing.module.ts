@@ -2,6 +2,7 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { NgModule } from '@angular/core';
 import {ContactComponent} from './components/contact.component';
 
+
 const routes: Routes =[
     {
         path: '',
@@ -14,7 +15,8 @@ const routes: Routes =[
         RouterModule.forChild(routes),
     ],
     exports: [
-        RouterModule
+        RouterModule,
+
     ]
 })
 

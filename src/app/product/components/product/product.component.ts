@@ -12,7 +12,7 @@ import {
     from '@angular/core'; // decorador que indica que este sera un componente. Input, ouput
 // el decorador se define antes de construir la clase
 
-import {Product} from '../product.model'; //importo el modelo para tipificar el objeto
+import {Product} from '../../model/product.model'; //importo el modelo para tipificar el objeto
 @Component({  // los componentes tienen metadata
     selector: 'app-product', 
     templateUrl: './product.component.html', //template

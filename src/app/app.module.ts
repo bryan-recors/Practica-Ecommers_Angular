@@ -4,12 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
-import { ProductComponent}from './product/product.component';
 import { CartComponent } from './cart/cart.component';
-import { ProductsComponent } from './products/products.component';
 import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+//importo el layout
 import { LayoutComponent } from './layout/layout.component'; //importo el componente creado de product
 //importo shared
 import {SharedModule} from './shared/shared.module';
@@ -21,12 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
     CartComponent,
-    ProductsComponent,
     DemoComponent,
     PageNotFoundComponent,
-    ProductDetailComponent,
     LayoutComponent, //en el array de declaration agregamos el componente
   ],
   imports: [
