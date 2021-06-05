@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { CartComponent } from './cart/cart.component';
-import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 //importo el layout
 import { LayoutComponent } from './layout/layout.component'; //importo el componente creado de product
@@ -20,7 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     CartComponent,
-    DemoComponent,
     PageNotFoundComponent,
     LayoutComponent, //en el array de declaration agregamos el componente
   ],

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';  
-import {DemoComponent} from './demo/demo.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LayoutComponent} from './layout/layout.component';
 //IMPORTO EL GUARDIAN
@@ -37,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'demo',  
-    component: DemoComponent
+    loadChildren:() => import('./demo/demo.module').then(m => m.DemoModule)
   },
   {
     path: '**',
