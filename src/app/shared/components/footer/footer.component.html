@@ -1,1 +1,12 @@
-<p>footer works!</p>
+<footer>
+    <div class="box">
+        <h3>Contacto</h3>
+        <mat-form-field>
+            <input matInput placeholder="digite su correo" [formControl]="emailField" type="email">   
+        </mat-form-field>
+        <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">Enviar</button>
+        <!-- {{emailField.valid}}
+        {{emailField.invalid}} 
+        <p *ngIf="emailField.invalid">el campo no es valido </p> -->
+    </div>
+</footer>

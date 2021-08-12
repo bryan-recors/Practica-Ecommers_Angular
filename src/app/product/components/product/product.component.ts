@@ -13,6 +13,9 @@ import {
 // el decorador se define antes de construir la clase
 
 import {Product} from '../../model/product.model'; //importo el modelo para tipificar el objeto
+//servicio del carrito
+import{CartService} from './../../../core/services/cart.service';
+
 @Component({  // los componentes tienen metadata
     selector: 'app-product', 
     templateUrl: './product.component.html', //template
@@ -27,7 +30,9 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {  //creamos
 
     // de tipo EventEmitter e inicializado en vacio 
     // que emitira un tipo cualquiera
-    constructor(){
+    constructor(
+        private cartService:CartService
+    ){
         console.log('1 constructor');
     }
 
@@ -54,7 +59,8 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {  //creamos
 
     addCart(){ // creo un metodo
         console.log('añadir al carrito');
-        this.productClicked.emit(this.product.id); //emito el valor id cuando pulse agregar
+        //this.productClicked.emit(this.product.id); //emito el valor id cuando pulse agregar
+        this.cartService.addCart(this.product);
     }
 } 
 

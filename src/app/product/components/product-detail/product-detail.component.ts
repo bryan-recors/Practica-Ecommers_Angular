@@ -19,11 +19,53 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params:Params)=>{
       const id = params.id;
+      this.fetchProduc(id);
       //console.log(id);
-       this.product = this.productsService.getProduct(id); //lamo almetodo y lo que me retorno lo guardo
+      //this.product = this.productsService.getProduct(id); //lamo almetodo y lo que me retorno lo guardo
       //imprimo la respusta
-      console.log(this.product);
+      //console.log(this.product);
     });
   }
+
+  fetchProduc(id:String){
+    this.productsService.getProduct(id).subscribe(product => {
+      this.product = product;
+    })
+
+  }
+
+  createProduct(){
+    const newProduct:Product = {
+        id:'222',
+        title:'nuevo desde angular bryan',
+        image:'assets/images/pantalon.jpg',
+        price: 5000,
+        description: 'nuevo Producto bran'
+    };
+    this.productsService.createProduct(newProduct).subscribe(product => {
+      console.log(product);
+    });
+
+  }
+
+  updateProduct(){
+    const updateProduct:Partial <Product> = { //indicao que es una parte de producto
+      price: 9000,
+      description: 'edicion bryan'
+  };
+    this.productsService.updateProduct('222',updateProduct).subscribe(product =>{
+      console.log(product);
+    });
+  }
+
+  
+  deleteProduct(){
+    this.productsService.deleteProduct('222').subscribe(rta =>{
+      console.log(rta);
+    });
+  }
+
+
+
 
 }

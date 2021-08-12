@@ -5,20 +5,30 @@ import {ActivatedRoute} from '@angular/router';
 import {ProductsService} from '../../../core/services/products/products.service';
 //importo el producto model 
 import {Product} from '../../model/product.model';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[];
+  products: Product[]=[];
   constructor(private route: ActivatedRoute,
     private productsService: ProductsService
     ) { }
 
   ngOnInit(): void {
+    /*
     this.products = this.productsService.getAllProducts(); //lamo almetodo y lo que me retorno lo guardo
     console.log(this.products);
+    */
+    this.fetchProducts();
+  }
+
+  fetchProducts(){
+    this.productsService.getAllProducts().subscribe(products =>{
+      this.products = products;
+    });
   }
 
   clickProduct(id: number){

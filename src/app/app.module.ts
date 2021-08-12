@@ -13,6 +13,15 @@ import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
 //de material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//*********servicio consumir ***
+import {HttpClientModule} from '@angular/common/http';
+//********* fin servicio consumir ***
+//firebase
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+//variables de ambiente firebase 
+import {environment} from './../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,7 +35,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     SharedModule,
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    //*********servicio consumir ***
+    HttpClientModule,
+    //********* fin servicio consumir ***
+    //firebase
+    AngularFireModule.initializeApp(environment.firebase),
+    //modulo para autenticacion 
+    AngularFireAuthModule,
+    //modulo para storage
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
